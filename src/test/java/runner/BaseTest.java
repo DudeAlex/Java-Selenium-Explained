@@ -1,5 +1,6 @@
 package runner;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
@@ -13,9 +14,16 @@ import java.time.Duration;
 public class BaseTest {
 
     private WebDriver driver;
+    private JavascriptExecutor js;
 
     public WebDriver getDriver() {
         return this.driver;
+    }
+
+    public JavascriptExecutor getJsExecutor() {
+        if(js==null)
+            js = (JavascriptExecutor) getDriver();
+        return js;
     }
 
     @BeforeMethod
@@ -32,6 +40,7 @@ public class BaseTest {
             MyUtils.takeScreenshot(getDriver(), method.getName(), this.getClass().getName());
         }
         getDriver().quit();
+        this.js = null;
     }
 
 }
