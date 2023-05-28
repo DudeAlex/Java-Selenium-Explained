@@ -26,4 +26,12 @@ public abstract class Employee implements Salary{
     }
 
     public abstract int getSalary();
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", baseSalary=" + baseSalary +
+                '}';
+    }
 }
