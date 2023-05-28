@@ -124,4 +124,9 @@ public class JSExecutorTest extends BaseTest {
 
         Thread.sleep(10000);
     }
+    @Test
+    public void testScrollIntoView(){
+
+        
+    }
 }

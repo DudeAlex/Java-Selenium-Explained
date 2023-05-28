@@ -20,4 +20,11 @@ public class Manager extends Employee{
     public int getSalary() {
         return (int)(getBaseSalary() * (1 + numberOfSubordinates * 3/100.0));
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Manager{" +
+                "numberOfSubordinates=" + numberOfSubordinates +
+                '}';
+    }
 }

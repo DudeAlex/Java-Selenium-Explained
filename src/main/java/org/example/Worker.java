@@ -10,4 +10,9 @@ public class Worker extends Employee{
     public int getSalary() {
         return getBaseSalary();
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +" Worker{}";
+    }
 }
